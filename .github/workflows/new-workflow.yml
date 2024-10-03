@@ -1,9 +1,12 @@
-name: test
-on: push
+name: linte-test
+
+on: 
+  push:
 jobs:
   builds:
     run-on: ubuntu-latest
     steps:
-      -run: make setup
-      -run: make test
-      -run: make lint
+      - uses: actions/checkout@v4
+      - run: make setup
+      - run: make test
+      - run: make lint
